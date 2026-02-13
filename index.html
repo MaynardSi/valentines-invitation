@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you be my Valentine?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Loading overlay -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-heart">&hearts;</div>
+      <p class="loader-text">Loading love...</p>
+      <div class="loader-bar-track">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti canvas overlay -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Vignette overlay for dramatic stages -->
+  <div id="vignette" class="vignette"></div>
+
+  <!-- Flash overlay for dramatic pauses -->
+  <div id="flash" class="flash"></div>
+
+  <div class="container hidden">
+    <header>
+      <h1 id="header">Will you be my Valentine?</h1>
+      <p id="subtext">My dear Yalin, I have a very important question for you...</p>
+    </header>
+
+    <main>
+      <div class="meme-wrapper" id="meme-wrapper">
+        <img id="meme" src="https://media.giphy.com/media/YZLD6EcLmptfO/giphy.gif" alt="Valentine meme">
+        <video id="meme-video" loop muted playsinline preload="auto" style="display:none;">
+          <source src="assets/video/dance.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="buttons" id="buttons">
+        <button id="btn-yes" onclick="handleYes()">Yes!</button>
+        <button id="btn-no" onclick="handleNo()">No</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Background music — user provides this file -->
+  <audio id="bgm" loop preload="auto">
+    <source src="assets/audio/bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Sound effect channel (src set dynamically via JS) -->
+  <audio id="sfx" preload="none"></audio>
+  <!-- Second sound effect channel for layering -->
+  <audio id="sfx2" preload="none"></audio>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
